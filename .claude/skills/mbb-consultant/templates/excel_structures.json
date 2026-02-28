@@ -1,0 +1,102 @@
+{
+  "profitability_analysis": {
+    "description": "Standard profitability decomposition (Revenue - Cost)",
+    "headers": ["Metric", "FY2022", "FY2023", "FY2024", "YoY Growth (%)"],
+    "units": ["", "$M", "$M", "$M", "%"],
+    "rows": [
+      {"label": "Revenue", "type": "input"},
+      {"label": "  Price (per unit)", "type": "input"},
+      {"label": "  Volume (units)", "type": "input"},
+      {"label": "", "type": "blank"},
+      {"label": "Cost of Goods Sold", "type": "input"},
+      {"label": "Gross Profit", "type": "formula", "formula_pattern": "={col}{revenue_row}-{col}{cogs_row}"},
+      {"label": "Gross Margin (%)", "type": "formula", "formula_pattern": "={col}{gp_row}/{col}{revenue_row}"},
+      {"label": "", "type": "blank"},
+      {"label": "SG&A", "type": "input"},
+      {"label": "R&D", "type": "input"},
+      {"label": "Other Operating Expenses", "type": "input"},
+      {"label": "Total Operating Expenses", "type": "formula", "formula_pattern": "=SUM({col}{sga_row}:{col}{other_row})"},
+      {"label": "", "type": "blank"},
+      {"label": "EBITDA", "type": "formula", "formula_pattern": "={col}{gp_row}-{col}{opex_row}"},
+      {"label": "EBITDA Margin (%)", "type": "formula", "formula_pattern": "={col}{ebitda_row}/{col}{revenue_row}"},
+      {"label": "", "type": "blank"},
+      {"label": "Depreciation & Amortization", "type": "input"},
+      {"label": "EBIT", "type": "formula", "formula_pattern": "={col}{ebitda_row}-{col}{da_row}"},
+      {"label": "Interest Expense", "type": "input"},
+      {"label": "Pre-tax Income", "type": "formula", "formula_pattern": "={col}{ebit_row}-{col}{interest_row}"},
+      {"label": "Taxes", "type": "input"},
+      {"label": "Net Income", "type": "formula", "formula_pattern": "={col}{pretax_row}-{col}{tax_row}"},
+      {"label": "Net Margin (%)", "type": "formula", "formula_pattern": "={col}{ni_row}/{col}{revenue_row}"}
+    ]
+  },
+  "market_sizing": {
+    "description": "TAM/SAM/SOM market sizing with top-down and bottom-up approaches",
+    "headers": ["Parameter", "Value", "Unit", "Source", "Confidence"],
+    "units": ["", "", "", "", ""],
+    "sections": [
+      {
+        "title": "Total Addressable Market (TAM)",
+        "rows": [
+          {"label": "Total market size", "type": "input"},
+          {"label": "Growth rate (CAGR)", "type": "input"},
+          {"label": "Projected TAM (3-year)", "type": "formula"}
+        ]
+      },
+      {
+        "title": "Serviceable Addressable Market (SAM)",
+        "rows": [
+          {"label": "Geographic filter", "type": "input"},
+          {"label": "Segment filter", "type": "input"},
+          {"label": "SAM", "type": "formula"}
+        ]
+      },
+      {
+        "title": "Serviceable Obtainable Market (SOM)",
+        "rows": [
+          {"label": "Expected market share (%)", "type": "input"},
+          {"label": "Ramp timeline (years)", "type": "input"},
+          {"label": "Year 1 SOM", "type": "formula"},
+          {"label": "Year 3 SOM", "type": "formula"}
+        ]
+      },
+      {
+        "title": "Bottom-Up Triangulation",
+        "rows": [
+          {"label": "Average deal size", "type": "input"},
+          {"label": "Target customers", "type": "input"},
+          {"label": "Win rate (%)", "type": "input"},
+          {"label": "Bottom-up estimate", "type": "formula"},
+          {"label": "Variance vs. top-down", "type": "formula"}
+        ]
+      }
+    ]
+  },
+  "competitive_landscape": {
+    "description": "Competitive comparison table",
+    "headers": ["Company", "Revenue ($M)", "Market Share (%)", "Growth (%)", "Gross Margin (%)", "Key Strength", "Key Weakness"],
+    "units": ["", "$M", "%", "%", "%", "", ""],
+    "row_type": "input"
+  },
+  "dcf_model": {
+    "description": "Discounted Cash Flow valuation model",
+    "additional_sheets": ["Assumptions", "Revenue Build", "P&L Projection", "FCF", "DCF Valuation"],
+    "assumption_parameters": [
+      {"label": "Revenue growth rate (%)", "type": "input"},
+      {"label": "Gross margin (%)", "type": "input"},
+      {"label": "OpEx as % of revenue", "type": "input"},
+      {"label": "CapEx as % of revenue", "type": "input"},
+      {"label": "Working capital days", "type": "input"},
+      {"label": "Tax rate (%)", "type": "input"},
+      {"label": "WACC (%)", "type": "input"},
+      {"label": "Terminal growth rate (%)", "type": "input"},
+      {"label": "Projection period (years)", "type": "input"}
+    ]
+  },
+  "benchmarking": {
+    "description": "Performance benchmarking across peers",
+    "headers": ["KPI", "Company", "Peer 1", "Peer 2", "Peer 3", "Industry Avg", "Gap vs. Best"],
+    "units": ["", "", "", "", "", "", ""],
+    "row_type": "input",
+    "gap_column_formula": "=MAX(C{row}:F{row})-B{row}"
+  }
+}

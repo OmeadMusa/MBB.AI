@@ -1,0 +1,75 @@
+{
+  "strategy_recommendation": {
+    "description": "General strategy recommendation deck (Situation-Complication-Resolution)",
+    "slides": [
+      {"type": "title", "required": true},
+      {"type": "exec_summary", "required": true, "notes": "Governing thought = the recommendation. 3-5 key supporting points."},
+      {"type": "content", "title_hint": "[Current state assertion — what is happening now]", "section": "Situation"},
+      {"type": "content", "title_hint": "[Problem/challenge assertion — why this matters]", "section": "Complication"},
+      {"type": "content", "repeatable": true, "title_hint": "[Key finding as assertion backed by data]", "section": "Analysis"},
+      {"type": "recommendations", "required": true},
+      {"type": "next_steps", "required": true}
+    ]
+  },
+  "market_entry": {
+    "description": "Market entry analysis and recommendation",
+    "slides": [
+      {"type": "title"},
+      {"type": "exec_summary", "notes": "Lead with go/no-go recommendation and key rationale"},
+      {"type": "content", "title_hint": "Market represents $XB opportunity growing at Y% CAGR"},
+      {"type": "content", "title_hint": "Competitive landscape is [fragmented/consolidated] with [N] major players"},
+      {"type": "table", "title_hint": "Competitor comparison revealing [key insight]"},
+      {"type": "content", "title_hint": "Our right to win stems from [specific capabilities]"},
+      {"type": "two_column", "title_hint": "Entry via [organic/M&A/JV] maximizes risk-adjusted returns"},
+      {"type": "content", "title_hint": "Financial model projects [ROI/payback] under base case assumptions"},
+      {"type": "recommendations"},
+      {"type": "next_steps"}
+    ]
+  },
+  "due_diligence": {
+    "description": "M&A due diligence findings and recommendation",
+    "slides": [
+      {"type": "title"},
+      {"type": "exec_summary", "notes": "Lead with buy/pass recommendation and valuation range"},
+      {"type": "section_divider", "title": "Strategic Fit"},
+      {"type": "content", "title_hint": "Target's [core capability] directly addresses our [strategic gap]"},
+      {"type": "content", "title_hint": "Combined entity would hold [X%] market share in [segment]"},
+      {"type": "section_divider", "title": "Financial Assessment"},
+      {"type": "content", "title_hint": "Target's revenue grew at [X%] CAGR with [Y%] EBITDA margins"},
+      {"type": "content", "title_hint": "DCF implies [valuation range] vs. asking price of [$X]"},
+      {"type": "content", "title_hint": "Identified $[X]M in cost synergies and $[Y]M in revenue synergies"},
+      {"type": "section_divider", "title": "Risks & Integration"},
+      {"type": "content", "title_hint": "[Key risk] could impact [X%] of projected synergies"},
+      {"type": "content", "title_hint": "Integration plan requires [X] months and $[Y]M investment"},
+      {"type": "recommendations"},
+      {"type": "next_steps"}
+    ]
+  },
+  "profitability_improvement": {
+    "description": "Profitability diagnosis and improvement plan",
+    "slides": [
+      {"type": "title"},
+      {"type": "exec_summary", "notes": "Lead with total improvement opportunity and top 3 levers"},
+      {"type": "content", "title_hint": "Margins declined [X]pp over [period] driven by [root cause]"},
+      {"type": "content", "title_hint": "Revenue-side issues account for [X%] of the margin gap"},
+      {"type": "content", "title_hint": "Cost-side issues account for [X%] of the margin gap"},
+      {"type": "content", "title_hint": "[Lever 1] represents largest opportunity at $[X]M impact"},
+      {"type": "content", "title_hint": "[Lever 2] offers quick wins achievable within [timeframe]"},
+      {"type": "content", "title_hint": "[Lever 3] requires investment of $[X]M with [Y]-year payback"},
+      {"type": "recommendations"},
+      {"type": "next_steps"}
+    ]
+  },
+  "operational_review": {
+    "description": "Operational performance review and optimization",
+    "slides": [
+      {"type": "title"},
+      {"type": "exec_summary"},
+      {"type": "content", "title_hint": "Current performance vs. benchmarks reveals [X] areas for improvement"},
+      {"type": "table", "title_hint": "KPI benchmarking shows gaps in [specific areas]"},
+      {"type": "content", "repeatable": true, "title_hint": "[Process area] improvement could yield [X%] efficiency gain"},
+      {"type": "recommendations"},
+      {"type": "next_steps"}
+    ]
+  }
+}
